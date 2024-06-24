@@ -1,0 +1,14 @@
+version: '24.0.5'
+
+services:
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+
+  db:
+    image: postgres:15.0-alpine
+    ports:
+      - 5431:5432
+    env_file:
+      - ./.db.env
